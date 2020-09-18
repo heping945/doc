@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 
 
-COPY ./default.conf /etc/nginx/conf.d/default.conf
+COPY ./doc.conf /etc/nginx/conf.d/default.conf
 
 
 WORKDIR docs
