@@ -20,14 +20,15 @@
 </head>
 
 <body>
-    <div id="zhp">
-        <span class='themechange' title="切换主题">{{msg}}</span>
+    <div id="zhp" v-clock>
+        <span class='themechange' title="切换主题"></span>
     </div>
 
     <div id="app"></div>
     <script>
         window.$docsify = {
             loadSidebar: true,
+            loadNavbar:true,
             subMaxLevel: 2,
             coverpage: true,
             routerMode: 'history',
@@ -115,12 +116,12 @@
     </script>
 
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
     <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <style>
