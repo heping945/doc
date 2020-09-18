@@ -9,8 +9,8 @@ WORKDIR docs
 
 # COPY docs .
 
-## 本地构建命令
-# docker build -t docs -f WinDockerfile .
+## 服务器构建命令
+# docker build -t docs .
 ## windows本地运行
-# docker run -itd --name docs -p 80:80 -v /F/document/docs:/docs/ docs
+# docker run -itd --name docs -p 80:80 -v /root/app/doc/docs:/docs/ docs
 
