@@ -11,7 +11,6 @@
     <meta name="description" content="document">
 
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css"> -->
 
     <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 
@@ -20,24 +19,26 @@
 </head>
 
 <body>
-    <div id="zhp" v-clock>
-        <span class='themechange' title="切换主题"></span>
-    </div>
+    <!-- <div id="zhp" v-clock>
+        <span class='themechange' title="切换主题" >
+        </span>
+    </div> -->
 
     <div id="app"></div>
     <script>
         window.$docsify = {
             loadSidebar: true,
-            loadNavbar:true,
-            subMaxLevel: 2,
+            loadNavbar: true,
+            subMaxLevel: 6,
             coverpage: true,
             routerMode: 'history',
+            // repo: 'https://github.com/heping945/doc',
             count: {
                 countable: true,
                 fontsize: '0.9em',
                 color: 'rgb(90,90,90)',
                 language: 'chinese'
-            }
+            },
         };
 
         const vm = new Vue({
@@ -50,25 +51,10 @@
                             href: "https://cdn.jsdelivr.net/npm/docsify/themes/vue.css"
                         },
                         {
-                            title: "buble",
-                            href: "https://cdn.jsdelivr.net/npm/docsify/themes/buble.css"
-                        },
-                        {
-                            title: "dark",
-                            href: "https://cdn.jsdelivr.net/npm/docsify/themes/dark.css"
-                        },
-                        {
-                            title: "dolphin",
-                            href: "https://cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"
-                        },
-                        {
                             title: "simple-dark",
                             href: "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
                         },
-                        {
-                            title: "simple",
-                            href: "https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
-                        },
+
                     ]
                 }
             },
@@ -76,7 +62,7 @@
                 localTheme() {
                     var theme = localStorage.getItem("theme")
                     return theme ? theme : this.themelist[0].href
-                }
+                },
             },
             methods: {
                 loadCss(href) {
@@ -96,21 +82,10 @@
                     }
                 },
 
-                removeCss(href) {
-                    var links = document.getElementsByTagName("link");
-                    for (var i = 0; i < links.length; i++) {
-                        var _href = links[i].href;
-                        if (links[i] && links[i].href && links[i].href.indexOf(href) != -1) {
-                            links[i].parentNode.removeChild(links[i]);
-                        }
-                    }
-                }
-
             },
             mounted() {
                 var item = this.themelist[Math.floor((Math.random() * this.themelist.length))]
-                this.loadCss(this.localTheme)
-                console.log(this.localTheme, "localtheme")
+                this.loadCss(item.href)
             }
         })
     </script>
@@ -121,7 +96,6 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-
     <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <style>
@@ -131,7 +105,7 @@
                 padding: 2rem 10px;
             }
         }
-        
+
         .themechange {
             position: fixed;
             right: 30px;
@@ -144,8 +118,13 @@
             background: #fff;
             border-radius: 50%;
         }
+
+        .themechange:hover {
+            background: #aaa;
+        }
+
         @media screen and (max-width: 414px) {
-            .themechange{
+            .themechange {
                 right: 10px;
             }
         }

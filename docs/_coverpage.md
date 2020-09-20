@@ -1,12 +1,12 @@
 ![logo](_media/logo.svg)
 
-# docsify <small>3.5</small>
+# Doc  <small>6.6</small>
 
-> 一个神奇的文档网站生成器。
+> 文档收集
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
+- 小册和其他博客专题内容
+- 持续更新中
 
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](#xixi)
+[GitHub](https://github.com/heping945/doc/)
+[Get Started](/)

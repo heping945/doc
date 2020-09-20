@@ -354,11 +354,14 @@ class MyModel(models.Model):
 该字段的默认表单小部件是 `ClearableFileInput`。
 
 在模型中使用 `FileField` 或 `ImageField` （见下文）需要几个步骤：
-
+```
 1. 在您的设置文件中，您需要将 `MEDIA_ROOT` 定义为您希望 Django 存储上传文件的目录的完整路径。将 `MEDIA_URL` 定义为该目录的基本公用 URL。确保 Web 服务器的用户有该目录的写入权限。
+
 2. 将 `FileField` 或 `ImageField` 添加到模型中，定义 `upload_to` 选项以指定用于上传文件的 `MEDIA_ROOT` 子目录。
+
 3. 所有将存储在数据库中的文件都是一个路径（相对于 `MEDIA_ROOT`）。你很可能想使用 Django 提供的便捷 url 属性。例如，如果您的 `ImageField` 被称为 `mug_shot` ，则可以使用 {{object.mug_shot.url}} 在模板中获取图像的绝对路径。
 
+```
 例如，假设您的 `MEDIA_ROOT` 设置为 `'/home/media'`，`upload_to` 设置为 `'photos/%Y/%m/%d'`。`upload_to` 的 `'%Y/%m/%d'` 部分是 `strftime()` 格式;`'％Y'` 是四位数年份，`'％m'` 是两位数月份，`'％d'` 是两位数日期。如果您在 2007年1月15日 上传文件，它将被保存在 `/home/media/photos/2007/01/15` 目录中。
 
 如果您想要检索上传文件的磁盘文件名或文件大小，可分别使用 `name` 和 `size` 属性;
