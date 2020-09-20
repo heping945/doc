@@ -85,7 +85,7 @@
             },
             mounted() {
                 var item = this.themelist[Math.floor((Math.random() * this.themelist.length))]
-                this.loadCss(item.href)
+                this.loadCss(this.themelist[0].href)
             }
         })
     </script>
