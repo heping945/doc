@@ -8,8 +8,9 @@ pip install django[=x.xx.x]
 
 项目管理
 
-| 命令 | 作用
-|:------------
+
+| 命令 | 作用 |
+|-|-|
 | `django-admin startproject [project name]` | 创建项目
 | `django-admin startapp [app name]` | 创建应用
 | `python manage.py makemigrations` | 创建数据库迁移文件
@@ -20,7 +21,7 @@ pip install django[=x.xx.x]
 调试
 
 | 命令 | 作用
-|:------------
+|-|-|
 | `python manage.py runserver` | 启动项目，默认监听 `8000` 端口
 | `python manage.py runserver 0:8080` | 自定义 ip 和 port
 | `python manage.py sqlmigrate [app name] [0001]` | 查看迁移时执行的 sql 指令
